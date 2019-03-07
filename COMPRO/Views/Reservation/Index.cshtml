@@ -1,0 +1,212 @@
+﻿
+@{
+    ViewBag.Title = "Reservation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script>
+    function ShowDate() {
+        $("#btnChangeDate").click();
+        document.form.submit();
+    }
+</script>
+
+<!-- SLIDER START -->
+<aside id="colorlib-hero" class="hero2">
+    <div class="flexslider">
+        <ul class="slides">
+            <li style="background-image: url(Content/res/images/img_about.jpg);" class="hght250">
+                <div class="overlay"></div>
+                <div class="hght250 container-fluid">
+                    <div class="hght250 row">
+                        <div class="hght250 col-md-6 col-sm-12 col-md-offset-3 slider-text mgl80">
+                            <div class="hght250 slider-text-inner slider-text-inner2 text-center txtlft">
+                                <h1>Reservation</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</aside>
+<!-- SLIDER END -->
+
+<div id="colorlib-contact">
+    <div class="container">
+        <div id="calendar"></div>
+    </div>
+</div>
+
+<div id="colorlib-contact">
+    <div class="container">
+
+        <div class="col-md-12 animate-box">
+
+            @using (Html.BeginForm("ShowPrice", "Reservation", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="row form-group">
+                    <div class="col-md-6">
+                        <label for="fname">Phone Number</label>
+                        <input type="number" id="phonenumber" class="form-control" placeholder="Your Phone Number">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lname">Date</label>
+                        <div class="form-field">
+                            <input type="text" id="date" class="form-control date" placeholder="Check date" onchange="ShowDate();">
+                            <button id="btnChangeDate" name="RsvDate" style="display:none" type="submit" class="btn btn-success fltright">Inquiry</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-md-6">
+                        <label for="fname">Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Your Name">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lname">Slot (Time)</label>
+                        <select class="form-control" id="sel1" name="RsvSchedule" onchange="ShowDate()">
+                            <option value="SCH00001">Slot 1 (06:00 - 08:00)</option>
+                            <option value="SCH00002">Slot 2 (08:00 - 10:00)</option>
+                            <option value="SCH00003">Slot 3 (10:00 - 12:00)</option>
+                            <option value="SCH00004">Slot 4 (12:00 - 14:00)</option>
+                            <option value="SCH00005">Slot 5 (14:00 - 16:00)</option>
+                            <option value="SCH00006">Slot 6 (16:00 - 18:00)</option>
+                            <option value="SCH00007">Slot 7 (18:00 - 20:00)</option>
+                            <option value="SCH00008">Slot 8 (20:00 - 22:00)</option>
+                            <option value="SCH00009">Slot 9 (22:00 - 24:00)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-md-6">
+                        <label for="fname">Address</label>
+                        <input type="text" id="name" class="form-control" placeholder="Your Name">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lname">Harga (IDR/Rupiah)</label>
+                        <input type="text" id="lname" class="form-control" placeholder="Date" value="Rp.450.000" readonly>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-md-6">
+                        <label for="fname">Email</label>
+                        <input type="text" id="name" class="form-control" placeholder="Your Name">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="fname">Team</label>
+                        <input type="text" id="team" class="form-control" placeholder="Your Team">
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-md-12">
+                        <label for="message">Additional Request</label>
+                        <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-md-12">
+                        <div class="checkbox">
+                            <label><input type="checkbox" value="">I agree to the Terms and Conditions</label>
+                        </div>
+                    </div>
+                </div>
+
+                
+            }
+
+            @using (Html.BeginForm("FormSave", "Reservation", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="form-group text-center">
+                    <input type="submit" value="Book Now" class="btn btn-primary">
+                </div>
+            }
+            
+
+        </div>
+
+    </div>
+</div>
+
+@RenderPage("~/Views/Shared/_Footer.cshtml")
+
+<script>
+
+		$(document).ready(function() {
+
+			var today = moment().day();
+
+			$('#calendar').fullCalendar({
+				header: {
+					left: 'prev,next today',
+					center: 'title',
+				},
+				height: 350,
+				minTime: '6:00',
+				maxTime: '24:00',
+				defaultView: 'agendaWeek',
+				firstDay: today,
+				navLinks: true,
+				allDaySlot: false,
+				eventLimit: true,
+				slotLabelFormat: 'HH:mm',
+				events: [
+					{
+						id: 999,
+						title: 'Team Siipon',
+						start: '2019-02-09T16:00:00',
+						end: '2019-02-09T18:30:00'
+					},
+					{
+						id: 999,
+						title: 'Team Siipon',
+						start: '2019-02-16T16:00:00',
+						end: '2019-02-16T18:30:00'
+					},
+					{
+						title: 'Team Ocir',
+						start: '2019-02-10T10:30:00',
+						end: '2019-02-10T12:30:00'
+					},
+					{
+						title: 'Team Sidqi',
+						start: '2019-02-11T12:00:00',
+						end: '2019-02-11T14:30:00'
+					},
+					{
+						title: 'Tournament Team Sidqi Vs Team Ocir',
+						start: '2019-02-12T14:30:00',
+						end: '2019-02-12T16:30:00'
+					},
+					{
+						title: 'Team Aldous',
+						start: '2019-02-12T17:30:00',
+						end: '2019-02-12T20:00:00'
+					},
+					{
+						title: 'Team Aldous Mini Map',
+						start: '2019-02-12T17:30:00',
+						end: '2019-02-12T20:00:00',
+						backgroundColor: '#ff0000'
+					},
+					{
+						title: 'Team Bangorek',
+						start: '2019-02-12T20:00:00',
+						end: '2019-02-12T22:30:00'
+					},
+					{
+						title: 'Team Vicard',
+						start: '2019-02-13T07:00:00',
+						end: '2019-02-13T09:30:00'
+					},
+				]
+			});
+
+		});
+
+</script>
