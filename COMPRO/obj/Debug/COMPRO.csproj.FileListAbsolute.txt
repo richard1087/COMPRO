@@ -80,3 +80,167 @@ D:\TEST\PROJECT\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.Owin.Security.
 D:\TEST\PROJECT\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\obj\Debug\COMPRO.csprojResolveAssemblyReference.cache
 D:\TEST\PROJECT\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\obj\Debug\COMPRO.dll
 D:\TEST\PROJECT\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\obj\Debug\COMPRO.pdb
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\ApplicationInsights.config
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\roslyn\csc.exe
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\roslyn\System.Collections.Immutable.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\roslyn\System.Reflection.Metadata.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\roslyn\vbc.exe
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\roslyn\VBCSCompiler.exe
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\roslyn\VBCSCompiler.exe.config
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\COMPRO.dll.config
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\COMPRO.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\COMPRO.pdb
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Antlr3.Runtime.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\EntityFramework.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\EntityFramework.SqlServer.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.AI.Agent.Intercept.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.AI.DependencyCollector.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.AI.Web.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.AI.WindowsServer.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.ApplicationInsights.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.AspNet.Identity.Core.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.Owin.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.Owin.Security.Cookies.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.Owin.Security.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.Owin.Security.Facebook.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.Owin.Security.Google.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.Owin.Security.OAuth.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.Owin.Security.Twitter.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.Web.Infrastructure.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Newtonsoft.Json.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Owin.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\System.Web.Helpers.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\System.Web.Mvc.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\System.Web.Optimization.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\System.Web.Razor.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\System.Web.WebPages.Deployment.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\System.Web.WebPages.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\System.Web.WebPages.Razor.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\WebGrease.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.AI.DependencyCollector.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.AI.Web.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.AI.WindowsServer.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.ApplicationInsights.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\System.Web.Helpers.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\System.Web.Mvc.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\System.Web.Optimization.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\System.Web.Razor.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\System.Web.WebPages.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\System.Web.WebPages.Deployment.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\System.Web.WebPages.Razor.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Antlr3.Runtime.pdb
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Newtonsoft.Json.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\EntityFramework.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\EntityFramework.SqlServer.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.AspNet.Identity.Core.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.Owin.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.Owin.Security.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.Owin.Security.Facebook.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.Owin.Security.Cookies.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.Owin.Security.OAuth.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.Owin.Security.Google.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.Owin.Security.Twitter.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\obj\Debug\COMPRO.dll
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\obj\Debug\COMPRO.pdb
+F:\Hans\ARCICI\PROJECT ARCICI\COMPRO\COMPRO\COMPRO\obj\Debug\COMPRO.csprojResolveAssemblyReference.cache
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\ApplicationInsights.config
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\roslyn\csc.exe
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\roslyn\System.Collections.Immutable.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\roslyn\System.Reflection.Metadata.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\roslyn\vbc.exe
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\roslyn\VBCSCompiler.exe
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\roslyn\VBCSCompiler.exe.config
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\COMPRO.dll.config
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\COMPRO.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\COMPRO.pdb
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Antlr3.Runtime.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\EntityFramework.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\EntityFramework.SqlServer.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.AI.DependencyCollector.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.AI.Web.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.AI.WindowsServer.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.ApplicationInsights.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.Owin.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.Owin.Security.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.Owin.Security.Google.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.Web.Infrastructure.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Newtonsoft.Json.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Owin.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\System.Web.Helpers.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\System.Web.Mvc.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\System.Web.Optimization.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\System.Web.Razor.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\System.Web.WebPages.Deployment.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\System.Web.WebPages.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\System.Web.WebPages.Razor.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\WebGrease.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.AI.DependencyCollector.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.AI.Web.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.AI.WindowsServer.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.ApplicationInsights.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\System.Web.Helpers.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\System.Web.Mvc.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\System.Web.Optimization.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\System.Web.Razor.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\System.Web.WebPages.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\System.Web.WebPages.Deployment.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\System.Web.WebPages.Razor.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Antlr3.Runtime.pdb
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Newtonsoft.Json.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\EntityFramework.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\EntityFramework.SqlServer.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.Owin.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.Owin.Security.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.Owin.Security.Google.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\obj\Debug\COMPRO.dll
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\obj\Debug\COMPRO.pdb
+D:\Project\Arcici\ARCICI\COMPRO\COMPRO\obj\Debug\COMPRO.csprojResolveAssemblyReference.cache

@@ -33,7 +33,7 @@ namespace COMPRO
     #endregion
 		
 		public GsportDBDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["GSportConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["GSportConnectionString1"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -62,11 +62,112 @@ namespace COMPRO
 			OnCreated();
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.MsJadwal_View")]
+		public ISingleResult<MsJadwal_ViewResult> MsJadwal_View([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tipe", DbType="VarChar(5)")] string tipe)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tipe);
+			return ((ISingleResult<MsJadwal_ViewResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Price_View")]
 		public ISingleResult<Price_ViewResult> Price_View([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tipe", DbType="VarChar(5)")] string tipe, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tanggal", DbType="VarChar(10)")] string tanggal, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="KodeSchedule", DbType="VarChar(50)")] string kodeSchedule)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tipe, tanggal, kodeSchedule);
 			return ((ISingleResult<Price_ViewResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TrxBooking_View")]
+		public ISingleResult<TrxBooking_ViewResult> TrxBooking_View([global::System.Data.Linq.Mapping.ParameterAttribute(Name="KodeBooking", DbType="VarChar(20)")] string kodeBooking, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tipe", DbType="VarChar(3)")] string tipe)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), kodeBooking, tipe);
+			return ((ISingleResult<TrxBooking_ViewResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TrxBookingCalendar")]
+		public ISingleResult<TrxBookingCalendarResult> TrxBookingCalendar([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Startdate", DbType="VarChar(10)")] string startdate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EndDate", DbType="VarChar(10)")] string endDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TipeTrx", DbType="VarChar(3)")] string tipeTrx)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), startdate, endDate, tipeTrx);
+			return ((ISingleResult<TrxBookingCalendarResult>)(result.ReturnValue));
+		}
+	}
+	
+	public partial class MsJadwal_ViewResult
+	{
+		
+		private string _KodeSchedule;
+		
+		private string _JamMulai;
+		
+		private string _JamSelesai;
+		
+		private string _Keterangan;
+		
+		public MsJadwal_ViewResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KodeSchedule", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string KodeSchedule
+		{
+			get
+			{
+				return this._KodeSchedule;
+			}
+			set
+			{
+				if ((this._KodeSchedule != value))
+				{
+					this._KodeSchedule = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JamMulai", DbType="VarChar(5)")]
+		public string JamMulai
+		{
+			get
+			{
+				return this._JamMulai;
+			}
+			set
+			{
+				if ((this._JamMulai != value))
+				{
+					this._JamMulai = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JamSelesai", DbType="VarChar(5)")]
+		public string JamSelesai
+		{
+			get
+			{
+				return this._JamSelesai;
+			}
+			set
+			{
+				if ((this._JamSelesai != value))
+				{
+					this._JamSelesai = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Keterangan", DbType="VarChar(32)")]
+		public string Keterangan
+		{
+			get
+			{
+				return this._Keterangan;
+			}
+			set
+			{
+				if ((this._Keterangan != value))
+				{
+					this._Keterangan = value;
+				}
+			}
 		}
 	}
 	
@@ -77,13 +178,13 @@ namespace COMPRO
 		
 		private string _Schedule;
 		
-		private System.Nullable<decimal> _Price;
+		private string _Price;
 		
 		public Price_ViewResult()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KodeHari", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KodeHari", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		public string KodeHari
 		{
 			get
@@ -115,8 +216,8 @@ namespace COMPRO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money")]
-		public System.Nullable<decimal> Price
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="VarChar(100)")]
+		public string Price
 		{
 			get
 			{
@@ -127,6 +228,346 @@ namespace COMPRO
 				if ((this._Price != value))
 				{
 					this._Price = value;
+				}
+			}
+		}
+	}
+	
+	public partial class TrxBooking_ViewResult
+	{
+		
+		private string _KodeBooking;
+		
+		private string _Status;
+		
+		private string _NamaStatus;
+		
+		private string _kodeFasilitas;
+		
+		private string _Fasilitas;
+		
+		private string _NamaTeam;
+		
+		private string _NamaPIC;
+		
+		private string _Email;
+		
+		private string _Keterangan;
+		
+		private string _NoRef;
+		
+		private string _PhonePIC;
+		
+		private string _Alamat;
+		
+		private string _StartDate;
+		
+		private string _EndDate;
+		
+		public TrxBooking_ViewResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KodeBooking", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string KodeBooking
+		{
+			get
+			{
+				return this._KodeBooking;
+			}
+			set
+			{
+				if ((this._KodeBooking != value))
+				{
+					this._KodeBooking = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this._Status = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NamaStatus", DbType="VarChar(100)")]
+		public string NamaStatus
+		{
+			get
+			{
+				return this._NamaStatus;
+			}
+			set
+			{
+				if ((this._NamaStatus != value))
+				{
+					this._NamaStatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_kodeFasilitas", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string kodeFasilitas
+		{
+			get
+			{
+				return this._kodeFasilitas;
+			}
+			set
+			{
+				if ((this._kodeFasilitas != value))
+				{
+					this._kodeFasilitas = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fasilitas", DbType="VarChar(100)")]
+		public string Fasilitas
+		{
+			get
+			{
+				return this._Fasilitas;
+			}
+			set
+			{
+				if ((this._Fasilitas != value))
+				{
+					this._Fasilitas = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NamaTeam", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string NamaTeam
+		{
+			get
+			{
+				return this._NamaTeam;
+			}
+			set
+			{
+				if ((this._NamaTeam != value))
+				{
+					this._NamaTeam = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NamaPIC", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string NamaPIC
+		{
+			get
+			{
+				return this._NamaPIC;
+			}
+			set
+			{
+				if ((this._NamaPIC != value))
+				{
+					this._NamaPIC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Keterangan", DbType="VarChar(MAX)")]
+		public string Keterangan
+		{
+			get
+			{
+				return this._Keterangan;
+			}
+			set
+			{
+				if ((this._Keterangan != value))
+				{
+					this._Keterangan = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NoRef", DbType="VarChar(200)")]
+		public string NoRef
+		{
+			get
+			{
+				return this._NoRef;
+			}
+			set
+			{
+				if ((this._NoRef != value))
+				{
+					this._NoRef = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhonePIC", DbType="VarChar(20)")]
+		public string PhonePIC
+		{
+			get
+			{
+				return this._PhonePIC;
+			}
+			set
+			{
+				if ((this._PhonePIC != value))
+				{
+					this._PhonePIC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Alamat", DbType="VarChar(500)")]
+		public string Alamat
+		{
+			get
+			{
+				return this._Alamat;
+			}
+			set
+			{
+				if ((this._Alamat != value))
+				{
+					this._Alamat = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartDate", DbType="VarChar(16)")]
+		public string StartDate
+		{
+			get
+			{
+				return this._StartDate;
+			}
+			set
+			{
+				if ((this._StartDate != value))
+				{
+					this._StartDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndDate", DbType="VarChar(16)")]
+		public string EndDate
+		{
+			get
+			{
+				return this._EndDate;
+			}
+			set
+			{
+				if ((this._EndDate != value))
+				{
+					this._EndDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class TrxBookingCalendarResult
+	{
+		
+		private string _NamaTeam;
+		
+		private string _StartDate;
+		
+		private string _EndDate;
+		
+		private string _Status;
+		
+		public TrxBookingCalendarResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NamaTeam", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string NamaTeam
+		{
+			get
+			{
+				return this._NamaTeam;
+			}
+			set
+			{
+				if ((this._NamaTeam != value))
+				{
+					this._NamaTeam = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartDate", DbType="VarChar(19)")]
+		public string StartDate
+		{
+			get
+			{
+				return this._StartDate;
+			}
+			set
+			{
+				if ((this._StartDate != value))
+				{
+					this._StartDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndDate", DbType="VarChar(19)")]
+		public string EndDate
+		{
+			get
+			{
+				return this._EndDate;
+			}
+			set
+			{
+				if ((this._EndDate != value))
+				{
+					this._EndDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this._Status = value;
 				}
 			}
 		}

@@ -1,13 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="GSport" Class="GsportDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=KLDIT18\SQLEXPRESS;Initial Catalog=GSport;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="GSportConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\RICHARD;Initial Catalog=GSport;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="GSportConnectionString1" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.MsJadwal_View" Method="MsJadwal_View">
+    <Parameter Name="Tipe" Parameter="tipe" Type="System.String" DbType="VarChar(5)" />
+    <ElementType Name="MsJadwal_ViewResult">
+      <Column Name="KodeSchedule" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="JamMulai" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="JamSelesai" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="Keterangan" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.Price_View" Method="Price_View">
     <Parameter Name="Tipe" Parameter="tipe" Type="System.String" DbType="VarChar(5)" />
     <Parameter Name="Tanggal" Parameter="tanggal" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="KodeSchedule" Parameter="kodeSchedule" Type="System.String" DbType="VarChar(50)" />
     <ElementType Name="Price_ViewResult">
-      <Column Name="KodeHari" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="KodeHari" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Schedule" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
-      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Price" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TrxBooking_View" Method="TrxBooking_View">
+    <Parameter Name="KodeBooking" Parameter="kodeBooking" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Tipe" Parameter="tipe" Type="System.String" DbType="VarChar(3)" />
+    <ElementType Name="TrxBooking_ViewResult">
+      <Column Name="KodeBooking" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="NamaStatus" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="kodeFasilitas" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Fasilitas" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NamaTeam" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="NamaPIC" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Keterangan" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="NoRef" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="PhonePIC" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Alamat" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TrxBookingCalendar" Method="TrxBookingCalendar">
+    <Parameter Name="Startdate" Parameter="startdate" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="EndDate" Parameter="endDate" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="TipeTrx" Parameter="tipeTrx" Type="System.String" DbType="VarChar(3)" />
+    <ElementType Name="TrxBookingCalendarResult">
+      <Column Name="NamaTeam" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

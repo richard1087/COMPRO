@@ -213,6 +213,7 @@
       <DependentUpon>GsportDB.dbml</DependentUpon>
     </Compile>
     <Compile Include="Models\DataModels.cs" />
+    <Compile Include="Models\IdentityModelscs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

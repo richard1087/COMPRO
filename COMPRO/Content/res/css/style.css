@@ -103,7 +103,7 @@ h1, h2, h3, h4, h5, h6, figure {
         color: #4586FF;
         padding: 4px 7px; }
   .colorlib-nav .top-menu {
-    padding: 40px 30px; }
+    padding: 0px 0px; }
     @media screen and (max-width: 768px) {
       .colorlib-nav .top-menu {
         padding: 28px 1em; } }
@@ -478,7 +478,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #colorlib-amenities,
 #colorlib-subscribe,
 #colorlib-footer {
-  padding: 6em 0;
+  padding: 3em 0;
   clear: both; }
   @media screen and (max-width: 768px) {
     #colorlib-dining-bar,

@@ -7,7 +7,8 @@ namespace COMPRO.Models
 {
     public class DataModels
     {
-
+        public List<MsJadwal> ListMsJadwal { get; set; }
+        public List<Harga> ListHarga { get; set; }
     }
 
     public class Harga
@@ -15,6 +16,22 @@ namespace COMPRO.Models
         public string KodeHari { get; set; }
         public string Schedule { get; set; }
         public string Price { get; set; }
+    }
+
+    public class MsJadwal
+    {
+        public string KodeSchedule { get; set; }
+        public string JamMulai { get; set; }
+        public string JamSelesai { get; set; }
+        public string MulaiBerlaku { get; set; }
+        public string Keterangan { get; set; }
+    }
+    public class BookingCalendar
+    {
+        public string title { get; set; }
+        public string Start { get; set; }
+        public string End { get; set; }
+        public string backgroundColor { get; set; }
     }
 
 }

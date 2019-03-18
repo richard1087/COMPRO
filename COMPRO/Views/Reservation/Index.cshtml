@@ -1,13 +1,37 @@
-﻿
+﻿@model COMPRO.Models.DataModels
 @{
     ViewBag.Title = "Reservation";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <script>
-    function ShowDate() {
-        $("#btnChangeDate").click();
-        document.form.submit();
+    function ShowPrice() {
+        //$("#btnChangeDate").click();
+        //document.getElementById("Harga").focus();
+        $(document).ready(function () {
+            new updateprice();
+        });
+    }
+    function updateprice() {
+        var date = document.getElementById("RsvDate").value;
+        var schedule = document.getElementById("RsvSchedule").value;
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("ShowPrice", "Reservation")',
+            cache: false,
+            async: true,
+            data: {
+                RsvDate: date,
+                RsvSchedule: schedule
+            },
+            success: function (response) {
+                if (response.success == true)
+                    $("#Harga").val(response.Price);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
     }
 </script>
 
@@ -43,52 +67,54 @@
 
         <div class="col-md-12 animate-box">
 
-            @using (Html.BeginForm("ShowPrice", "Reservation", FormMethod.Post, new { enctype = "multipart/form-data" }))
-            {
+@using (Html.BeginForm("Reservasi", "Reservation", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal form-label-left" }))
+{
+    var pilih = "selected";
                 <div class="row form-group">
-                    <div class="col-md-6">
-                        <label for="fname">Phone Number</label>
-                        <input type="number" id="phonenumber" class="form-control" placeholder="Your Phone Number">
-                    </div>
                     <div class="col-md-6">
                         <label for="lname">Date</label>
                         <div class="form-field">
-                            <input type="text" id="date" class="form-control date" placeholder="Check date" onchange="ShowDate();">
-                            <button id="btnChangeDate" name="RsvDate" style="display:none" type="submit" class="btn btn-success fltright">Inquiry</button>
+                            <input type="text" id="RsvDate" name="RsvDate" class="form-control date" placeholder="Check date" value="@ViewBag.RsvDate">
+                            <button id="btnChangeDate" name="btnChangeDate" style="display:none" type="submit" class="btn btn-success fltright">Inquiry</button>
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <label for="fname">Team</label>
+                        <input type="text" id="team" class="form-control" placeholder="Your Team">
+                    </div>
+                    
+                    
                 </div>
 
                 <div class="row form-group">
+                    <div class="col-md-6">
+                        <label for="lname">Slot (Time)</label>
+                        <select class="form-control" id="RsvSchedule" name="RsvSchedule" required="" onchange="ShowPrice()">
+                            <option value="xxx">---Select Slot (Time)---</option>
+                            @foreach (var item in Model.ListMsJadwal)
+                            {
+                                <option value="@Html.DisplayFor(modelItem => item.KodeSchedule)" @if (@Html.DisplayFor(modelItem => item.KodeSchedule).ToString() == @ViewBag.RsvSchedule) { @pilih  ; }>@Html.DisplayFor(modelItem => item.Keterangan)</option>
+
+                            }
+                        </select>
+                    </div>
                     <div class="col-md-6">
                         <label for="fname">Name</label>
                         <input type="text" id="name" class="form-control" placeholder="Your Name">
                     </div>
-                    <div class="col-md-6">
-                        <label for="lname">Slot (Time)</label>
-                        <select class="form-control" id="sel1" name="RsvSchedule" onchange="ShowDate()">
-                            <option value="SCH00001">Slot 1 (06:00 - 08:00)</option>
-                            <option value="SCH00002">Slot 2 (08:00 - 10:00)</option>
-                            <option value="SCH00003">Slot 3 (10:00 - 12:00)</option>
-                            <option value="SCH00004">Slot 4 (12:00 - 14:00)</option>
-                            <option value="SCH00005">Slot 5 (14:00 - 16:00)</option>
-                            <option value="SCH00006">Slot 6 (16:00 - 18:00)</option>
-                            <option value="SCH00007">Slot 7 (18:00 - 20:00)</option>
-                            <option value="SCH00008">Slot 8 (20:00 - 22:00)</option>
-                            <option value="SCH00009">Slot 9 (22:00 - 24:00)</option>
-                        </select>
-                    </div>
+                    
                 </div>
 
                 <div class="row form-group">
                     <div class="col-md-6">
+                        <label for="lname">Harga (IDR/Rupiah)</label>
+                        <input type="text" id="Harga" name="Harga" class="form-control" placeholder="IDR (Rupiah)" value="@Session["Harga"].ToString()" readonly>
+                    </div>
+                    <div class="col-md-6">
                         <label for="fname">Address</label>
                         <input type="text" id="name" class="form-control" placeholder="Your Name">
                     </div>
-                    <div class="col-md-6">
-                        <label for="lname">Harga (IDR/Rupiah)</label>
-                        <input type="text" id="lname" class="form-control" placeholder="Date" value="Rp.450.000" readonly>
-                    </div>
+                    
                 </div>
 
                 <div class="row form-group">
@@ -97,8 +123,8 @@
                         <input type="text" id="name" class="form-control" placeholder="Your Name">
                     </div>
                     <div class="col-md-6">
-                        <label for="fname">Team</label>
-                        <input type="text" id="team" class="form-control" placeholder="Your Team">
+                        <label for="fname">Phone Number</label>
+                        <input type="number" id="phonenumber" class="form-control" placeholder="Your Phone Number">
                     </div>
                 </div>
 
@@ -116,18 +142,10 @@
                         </div>
                     </div>
                 </div>
-
-                
-            }
-
-            @using (Html.BeginForm("FormSave", "Reservation", FormMethod.Post, new { enctype = "multipart/form-data" }))
-            {
                 <div class="form-group text-center">
                     <input type="submit" value="Book Now" class="btn btn-primary">
                 </div>
             }
-            
-
         </div>
 
     </div>
@@ -137,76 +155,58 @@
 
 <script>
 
-		$(document).ready(function() {
+    $('#RsvDate').datepicker({
+        format: 'dd/mm/yyyy'
+    });
 
-			var today = moment().day();
+</script>
+<script>
 
-			$('#calendar').fullCalendar({
-				header: {
-					left: 'prev,next today',
-					center: 'title',
-				},
-				height: 350,
-				minTime: '6:00',
-				maxTime: '24:00',
-				defaultView: 'agendaWeek',
-				firstDay: today,
-				navLinks: true,
-				allDaySlot: false,
-				eventLimit: true,
-				slotLabelFormat: 'HH:mm',
-				events: [
-					{
-						id: 999,
-						title: 'Team Siipon',
-						start: '2019-02-09T16:00:00',
-						end: '2019-02-09T18:30:00'
-					},
-					{
-						id: 999,
-						title: 'Team Siipon',
-						start: '2019-02-16T16:00:00',
-						end: '2019-02-16T18:30:00'
-					},
-					{
-						title: 'Team Ocir',
-						start: '2019-02-10T10:30:00',
-						end: '2019-02-10T12:30:00'
-					},
-					{
-						title: 'Team Sidqi',
-						start: '2019-02-11T12:00:00',
-						end: '2019-02-11T14:30:00'
-					},
-					{
-						title: 'Tournament Team Sidqi Vs Team Ocir',
-						start: '2019-02-12T14:30:00',
-						end: '2019-02-12T16:30:00'
-					},
-					{
-						title: 'Team Aldous',
-						start: '2019-02-12T17:30:00',
-						end: '2019-02-12T20:00:00'
-					},
-					{
-						title: 'Team Aldous Mini Map',
-						start: '2019-02-12T17:30:00',
-						end: '2019-02-12T20:00:00',
-						backgroundColor: '#ff0000'
-					},
-					{
-						title: 'Team Bangorek',
-						start: '2019-02-12T20:00:00',
-						end: '2019-02-12T22:30:00'
-					},
-					{
-						title: 'Team Vicard',
-						start: '2019-02-13T07:00:00',
-						end: '2019-02-13T09:30:00'
-					},
-				]
-			});
+    $(document).ready(function () {
 
-		});
+        var today = moment().day();
+        var tipe = 'MSC';
+        $('#calendar').fullCalendar({
+            height: 350,
+            minTime: '6:00',
+            slotLabelFormat: 'HH:mm',
+            selectTable: true,
+            header: {
+                left: 'prev,next today',
+
+                center: 'title',
+            },
+            defaultView: 'agendaWeek',
+            firstDay: today,
+            navLinks: false,
+            allDaySlot: false,
+            eventLimit: true,
+            events: function (start, end, timezone, callback) {
+                $.ajax({
+                    url: '@Url.Action("GetBookingSchedule", "Reservation")',
+                    type: 'GET',
+                    data: {
+                        startdate: start.format('YYYY-MM-DD'),
+                        enddate: end.format('YYYY-MM-DD'),
+                        tipe:tipe
+                    },
+                    success: function (Output) {
+                        var events = [];
+                        //if (response.success == true) {
+                        $.each(JSON.parse(Output), function (i, v) {
+                            events.push({
+                                title: v.title,
+                                start: v.Start,
+                                end: v.End,
+                                backgroundColor: v.backgroundColor
+                            });
+                        });
+                        callback(events);
+                        console.log(events);
+                    }
+                });
+            }
+        });
+    });
 
 </script>
