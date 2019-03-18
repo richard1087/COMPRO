@@ -174,9 +174,27 @@ namespace COMPRO.Controllers
             return View("Index", listdata);
         }
         [HttpPost]
-        public ActionResult SaveBook(string date, string team, string slot, string nama, string harga, string alamat, string email, string notlp, string ket)
+        public ActionResult SaveBook(string date, string team, string slot, string nama, string alamat, string email, string notlp, string ket)
         {
+            dc = new GsportDBDataContext();
+            DateTime dt1 = DateTime.ParseExact(date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            DateTime dt2 = DateTime.ParseExact(date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            string status = "";
+            try
+            {
+                var query = dc.TrxBooking_IUD("", dt1, dt2, "MSC", team, email, nama, notlp, alamat, ket, slot, "", "", "I");
+                foreach (var res in query)
+                {
+                    IUD_Status iud = new IUD_Status();
+                    iud.Status = res.Status;
+                    status = res.Status;
+                }
+            }
+            catch (Exception ex)
+            {
 
+            }
+            return Json(new { success = true, responseText = status }, JsonRequestBehavior.AllowGet);
         }
     }
 }

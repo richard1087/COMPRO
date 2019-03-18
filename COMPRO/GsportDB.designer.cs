@@ -89,6 +89,13 @@ namespace COMPRO
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), startdate, endDate, tipeTrx);
 			return ((ISingleResult<TrxBookingCalendarResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TrxBooking_IUD")]
+		public ISingleResult<TrxBooking_IUDResult> TrxBooking_IUD([global::System.Data.Linq.Mapping.ParameterAttribute(Name="KodeBooking", DbType="VarChar(20)")] string kodeBooking, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TanggalBookingAwal", DbType="Date")] System.Nullable<System.DateTime> tanggalBookingAwal, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TanggalBookingAkhir", DbType="Date")] System.Nullable<System.DateTime> tanggalBookingAkhir, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="KodeFasilitas", DbType="VarChar(5)")] string kodeFasilitas, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NamaTeam", DbType="VarChar(500)")] string namaTeam, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Email", DbType="VarChar(MAX)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NamaPIC", DbType="VarChar(200)")] string namaPIC, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PhonePIC", DbType="VarChar(20)")] string phonePIC, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Alamat", DbType="VarChar(MAX)")] string alamat, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Keterangan", DbType="VarChar(MAX)")] string keterangan, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="KodeSchedule", DbType="VarChar(10)")] string kodeSchedule, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NoRef", DbType="VarChar(200)")] string noRef, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="User", DbType="VarChar(50)")] string user, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tipe", DbType="VarChar(5)")] string tipe)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), kodeBooking, tanggalBookingAwal, tanggalBookingAkhir, kodeFasilitas, namaTeam, email, namaPIC, phonePIC, alamat, keterangan, kodeSchedule, noRef, user, tipe);
+			return ((ISingleResult<TrxBooking_IUDResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class MsJadwal_ViewResult
@@ -557,6 +564,32 @@ namespace COMPRO
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this._Status = value;
+				}
+			}
+		}
+	}
+	
+	public partial class TrxBooking_IUDResult
+	{
+		
+		private string _Status;
+		
+		public TrxBooking_IUDResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="VarChar(23) NOT NULL", CanBeNull=false)]
 		public string Status
 		{
 			get

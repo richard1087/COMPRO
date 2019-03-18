@@ -50,4 +50,23 @@
       <Column Name="Status" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.TrxBooking_IUD" Method="TrxBooking_IUD">
+    <Parameter Name="KodeBooking" Parameter="kodeBooking" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="TanggalBookingAwal" Parameter="tanggalBookingAwal" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="TanggalBookingAkhir" Parameter="tanggalBookingAkhir" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="KodeFasilitas" Parameter="kodeFasilitas" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="NamaTeam" Parameter="namaTeam" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="NamaPIC" Parameter="namaPIC" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="PhonePIC" Parameter="phonePIC" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Alamat" Parameter="alamat" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Keterangan" Parameter="keterangan" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="KodeSchedule" Parameter="kodeSchedule" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="NoRef" Parameter="noRef" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="User" Parameter="user" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Tipe" Parameter="tipe" Type="System.String" DbType="VarChar(5)" />
+    <ElementType Name="TrxBooking_IUDResult">
+      <Column Name="Status" Type="System.String" DbType="VarChar(23) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>

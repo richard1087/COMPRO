@@ -33,13 +33,104 @@
             }
         });
     }
+    function validEmail(email) {
+        var pattern = /^[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*@@[a-z0-9]+(\-[a-z0-9]+)*(\.[a-z0-9]+(\-[a-z0-9]+)*)*\.[a-z]{2,4}$/;
+        return pattern.test(email);
+    }
+    function CheckTerms()
+    {
+        var check = document.getElementById("checkbox");
+        var submit = document.getElementById("submit");
+        if(check.checked)
+        {
+            submit.disabled = "";
+        }
+        else
+        {
+            submit.disabled = "disabled";
+        }
+    }
+    function isChecked(checkbox, btnid) {
+        var button = document.getElementById(btnid);
+
+        if (checkbox.checked === true) {
+            button.disabled = false;
+        } else {
+            button.disabled = true;
+        }
+    }
+    function Save()
+    {
+        var patternNoPhone = /^08[0-9]{8,12}$/;
+
+        var date = document.getElementById("RsvDate").value;
+        var team = document.getElementById("team").value;
+        var name = document.getElementById("name").value;
+        var kodeschedule = document.getElementById("RsvSchedule").value;
+        var addr = document.getElementById("Address").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phonenumber").value;
+        var ket = document.getElementById("message").value;
+        var harga = document.getElementById("Harga").value;
+        if (!patternNoPhone.test(phone) && phone != "") {
+            $(".modal-body #peringatan1").text("Invalid phone number");
+            $("#Alert1").modal();
+        }
+        else if(!validEmail(email) && email =="")
+        {
+            $(".modal-body #peringatan1").text("Invalid email address");
+            $("#Alert1").modal();
+        }
+        else if(date == "")
+        {
+            $(".modal-body #peringatan1").text("Please fill booking date");
+            $("#Alert1").modal();
+        }
+        else if(team == "")
+        {
+            $(".modal-body #peringatan1").text("Please fill your team");
+            $("#Alert1").modal();
+        }
+        else if (harga == "0")
+        {
+            $(".modal-body #peringatan1").text("Please select slot/hours");
+            $("#Alert1").modal();
+        }
+        else
+        {
+
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("SaveBook", "Reservation")',
+                cache: false,
+                async: true,
+                data: {
+                    date: date,
+                    team: team,
+                    slot: kodeschedule,
+                    nama: name,
+                    alamat: addr,
+                    email: email,
+                    notlp: phone,
+                    ket: ket
+                },
+                success: function (response) {
+                    if (response.success == true)
+                        alert(response.responseText)
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert(errorThrown);
+                }
+            });
+        }
+    }
 </script>
 
 <!-- SLIDER START -->
 <aside id="colorlib-hero" class="hero2">
     <div class="flexslider">
         <ul class="slides">
-            <li style="background-image: url(Content/res/images/img_about.jpg);" class="hght250">
+            <li style="background-image: url(../Content/res/images/img_about.jpg);" class="hght250">
                 <div class="overlay"></div>
                 <div class="hght250 container-fluid">
                     <div class="hght250 row">
@@ -112,7 +203,7 @@
                     </div>
                     <div class="col-md-6">
                         <label for="fname">Address</label>
-                        <input type="text" id="name" class="form-control" placeholder="Your Name">
+                        <input type="text" id="Address" class="form-control" placeholder="Your Address">
                     </div>
                     
                 </div>
@@ -120,7 +211,7 @@
                 <div class="row form-group">
                     <div class="col-md-6">
                         <label for="fname">Email</label>
-                        <input type="text" id="name" class="form-control" placeholder="Your Name">
+                        <input type="text" id="email" class="form-control" placeholder="Your Email">
                     </div>
                     <div class="col-md-6">
                         <label for="fname">Phone Number</label>
@@ -138,19 +229,72 @@
                 <div class="row form-group">
                     <div class="col-md-12">
                         <div class="checkbox">
-                            <label><input type="checkbox" value="">I agree to the Terms and Conditions</label>
+                            <label><input id="checkbox" type="checkbox" value="" onchange="isChecked(this, 'submit')" />I agree to the Terms and Conditions</label>
                         </div>
                     </div>
                 </div>
                 <div class="form-group text-center">
-                    <input type="submit" value="Book Now" class="btn btn-primary">
+                    <input type="submit" id="submit" value="Book Now" disabled="disabled"  class="btn btn-primary" onclick="Save()" return false />
                 </div>
             }
         </div>
 
     </div>
 </div>
+<!-- MODAL START -->
+<div class="modal fade" id="MyModal" name="Alert1" role="dialog" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog">
 
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Thankyou for Booking</h4>
+            </div>
+            <div class="modal-body">
+                <p class="ttlKdBook">Kode Booking Anda</p>
+                <p class="kdBook">BKD-1903-00001</p>
+                <p class="txtcntr">Waktu anda untuk melunasi pembayaran</p>
+                <p id="timeCountDown" class="poptm"></p>
+                <p class="txtcntr">Setelah melakukan transfer, harap mengisi nomor referensi transfer dibawah ini</p>
+                <p>
+                    <input type="text" id="noreference" class="form-control" placeholder="No. Referensi">
+                </p>
+                <div class="form-group text-center row">
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-primary btn-green" style="width:100% !important;">Submit</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-danger" style="width:100% !important;">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- MODAL END -->
+<!-- MODAL WARNING START -->
+<div class="modal fade" id="Alert1" name="Alert1" role="dialog" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title modaltrayek"><font style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-weight:bold;">Error</font></h4>
+            </div>
+            <div class="modal-body">
+                <table style="100%">
+                    <tr>
+                        <td width="15%" style="vertical-align:middle;"><i class="fa fa-close" aria-hidden="true" style="color:red;font-size:40px;"></i>
+                        <td style="vertical-align:middle;">
+                            <label id="peringatan1" name="peringatan1" style="color:black;margin-bottom:0 !important; font-family:Verdana, Geneva, Tahoma, sans-serif; font-weight:100;"></label>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button id="btnerror" name="btnerror" type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MODAL WARNING END -->
 @RenderPage("~/Views/Shared/_Footer.cshtml")
 
 <script>

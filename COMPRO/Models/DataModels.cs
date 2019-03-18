@@ -33,5 +33,9 @@ namespace COMPRO.Models
         public string End { get; set; }
         public string backgroundColor { get; set; }
     }
+    public class IUD_Status
+    {
+        public string Status { get; set; }
+    }
 
 }
